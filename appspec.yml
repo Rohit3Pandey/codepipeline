@@ -1,13 +1,12 @@
 version: 0.0
 os: linux
 files:
-  - source: index.html
+  - source: /index.html
     destination: /var/www/html/
-
 hooks:
   AfterInstall:
     - location: scripts/restart_apache.sh
-      timeout: 30
+      timeout: 300
       runas: root
-      interpreter: ["/bin/bash"]
+
 
