@@ -1,12 +1,17 @@
 version: 0.0
 os: linux
 files:
-  - source: /index.html
+  - source: index.html
     destination: /var/www/html/
+    overwrite: true   # <- this allows replacing the existing file
+
 hooks:
   AfterInstall:
     - location: scripts/restart_apache.sh
-      timeout: 300
+      timeout: 30
       runas: root
+      interpreter: ["/bin/bash"]
+
+
 
 
