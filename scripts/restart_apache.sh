@@ -1,6 +1,5 @@
-hooks:
-  AfterInstall:
-    - location: scripts/restart_apache.sh
-      timeout: 30
-      runas: root
-      interpreter: ["bash"]
+#!/bin/bash
+echo "Restarting Apache..."
+systemctl restart httpd
+echo "Apache restarted successfully."
+
